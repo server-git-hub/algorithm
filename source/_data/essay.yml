@@ -1,0 +1,61 @@
+- title: 即刻短文
+  subTitle: 咸鱼的日常生活。
+  tips: 随时随地，分享生活
+  buttonText: 关于我
+  buttonLink: /about/
+  limit: 30
+  home_essay: true
+  top_background: https://iainixzy-image-1304973859.cos.ap-shanghai.myqcloud.com//%E6%88%91
+  essay_list:
+    # - content: 安知鱼主题指南
+    #   date: 2023/09/09
+    #   video:
+    #     - https://player.bilibili.com/player.html?aid=226886152&bvid=BV1Ch41137tR&cid=1081639816&p=1&autoplay=0
+    # - content: 支持了Accesskey快捷键，可以直接按下shift + ?组合键以查看快捷键选项。
+    #   date: 2023/07/01
+    #   video:
+    #     - https://cdn.jsdelivr.net/npm/anzhiyu-blog-static@1.0.0/video/%E9%A3%8E%E8%BD%A6%E6%A0%B7%E5%BC%8F%E6%95%88%E6%9E%9C%E9%A2%84%E8%A7%88.mp4
+    #   image:
+    #     - https://img02.anheyu.com/adminuploads/1/2023/07/01/64a033cb2c21e.webp!blogimg
+      # address: 长沙
+      # from: 安知鱼
+      # link: /posts/e140.html
+    - content: 应胡总要求去营口大石桥喜茶支援, 新店开业原计划3天后改为11天, 长话短说, 因为是兼职涉世不深, 那些老油条对于我这种出顾茅庐的小鸡仔可是很不友好啊, 有一个胖胖的猪猪男孩又名督导在忙的时候玩手机, 给鼠鼠印象不甚好, 店里初次感觉无纪律, 后面比较好了, 认识很多新朋友, 本来不打算去的, 赚了
+      image:
+        - https://iainixzy-image-1304973859.cos.ap-shanghai.myqcloud.com/%E4%B8%B4%E6%97%B6%2F%E4%B8%B4%E6%97%B6pic%2F%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20240824021038.jpg
+        - https://iainixzy-image-1304973859.cos.ap-shanghai.myqcloud.com/%E4%B8%B4%E6%97%B6%2F%E4%B8%B4%E6%97%B6pic%2F28f400ee14236c3fc617702fd7b0be2.jpg
+        - https://iainixzy-image-1304973859.cos.ap-shanghai.myqcloud.com/%E4%B8%B4%E6%97%B6%2F%E4%B8%B4%E6%97%B6pic%2F%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20240824021007.jpg
+        - https://iainixzy-image-1304973859.cos.ap-shanghai.myqcloud.com/%E4%B8%B4%E6%97%B6%2F%E4%B8%B4%E6%97%B6pic%2F%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20240824021037.jpg
+        - https://iainixzy-image-1304973859.cos.ap-shanghai.myqcloud.com/%E4%B8%B4%E6%97%B6%2F%E4%B8%B4%E6%97%B6pic%2F%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_202408240210371.jpg
+      date: 2024/08/18
+    - content: 音乐支持了参数设置自定义歌单
+      date: 2023/01/02
+      link: https://blog.anheyu.com/music/?id=7269231710&server=tencent
+    - content: 关于页的打赏仿了b站的充电功能，使用svg绘图➕一些动画参数移动，应该不会被b站警告吧😜，另外文章也支持了顶部随机b站同款春秋冬banner。
+      date: 2022/12/18
+    - content: React中不能直接修改state的一个重要原因是在性能优化时的prueComponment会进行浅层比较会认为是用一个对象且不能进入队列中批量更新
+      date: 2022/12/10
+    - content: 全局音乐的动画也处理好了, nice!
+      date: 2022/11/13
+    - content: 把页脚, 首页顶部全都魔改到本地了, 方便后续魔改, 音乐也改成胶囊的样式了, 其实还是想让胶囊可拖拽, 不可点击改变歌词位置的, 但是弄了半天都没弄好就放弃了
+      date: 2022/11/13
+    # - content: 遇见彩虹🌈吃定彩虹
+    #   date: 2022/10/23 10:00:00
+    #   image:
+    #     - https://bu.dusays.com/2023/04/09/64329399e285d.webp
+    #     - https://bu.dusays.com/2023/04/09/64329399aa3bc.webp
+    #     - https://bu.dusays.com/2023/04/09/6432939996dd7.webp
+    - content: ThreeJs API真多丫
+      date: 2022/10/19
+    - content: 歌曲推荐
+      date: 2022/09/25
+      aplayer:
+        server: tencent
+        id: 001FGQba3i10mw
+    - content: 做了一个噩梦, 梦到从楼顶坠下去了。😷
+      date: 2022/09/24
+    - content: JOJO是真的好看！
+      date: 2022/09/21
+      link: https://www.bilibili.com/bangumi/play/ss39431?spm_id_from=333.337.0.0
+    - content: 关于Blog重建, 在我频繁通断电的情况下把机械硬盘弄坏了, 导致存放在里面的数据全部丢失, 包括Blog, 后又花了三天时间重建成为今天所看到的样子
+      date: 2024/6/21

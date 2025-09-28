@@ -1,0 +1,19 @@
+ctrl + enter 行中换行
+alt + up / down 上下移行
+shift + alt + up / down 上下复制
+ctrl + left / right 跳单词（跳块）
+ctrl + delete / backspace 删单词（删块）
+ctrl + l 多按几次 选单行，继续按选多行
+shift + delete 删一行
+ctrl + c && ctrl + v 复制一行，粘贴一行
+ctrl + j 下栏
+ctrl + b 左栏
+ctrl + ` 终端
+alt + LButton 多位编辑
+ctrl + / 注释
+ctrl + [/] 缩进
+ctrl + +/- ui缩放
+ctrl + 0 定位文件
+ctrl shift p 命令
+ctrl p 在文件夹内搜索文件
+f2 重命名变量

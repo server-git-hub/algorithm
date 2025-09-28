@@ -1,0 +1,49 @@
+- class_name: 好物
+  description: 实物装备推荐
+  tip: 随 神奇海螺 一起享受科技带来的乐趣
+  top_background: https://bu.dusays.com/2023/07/05/64a4c38842b7a.webp
+  good_things:
+    - title: 生产力
+      description: 提升自己生产效率的硬件设备
+      equipment_list:
+        - name: 神州战神G8-CU7NS 16 英寸
+          specification: i7-10750H/16GB/512GB/RTX2060
+          description: 屏幕显示效果好、色彩准确、对比度强、性能强劲、续航优秀。可以用来开发和设计。
+          image: https://iainixzy-image-1304973859.cos.ap-shanghai.myqcloud.com//%E7%A5%9E%E8%88%9F%E6%88%98%E7%A5%9E.png
+          link: https://product.pconline.com.cn/notebook/hasee/1288528_detail.html
+        - name: 红米K40PRO+
+          specification: 深空灰 / 12+128G
+          description: 三星GM2 1亿像素主摄像头，屏幕支持120Hz刷新率和360Hz触控采样率，支持33W快充，支持WiFi6E
+          image: https://iainixzy-image-1304973859.cos.ap-shanghai.myqcloud.com//%E7%BA%A2%E7%B1%B3
+          link: https://www.apple.com.cn/ipad-10.2/
+        - name: 黑鲨4
+          specification: 蓝色 / 12+128G
+          description: 搭载高通骁龙870，6.67英寸E4材质三星AMOLED屏幕，局部峰值1300nit，刷新率高达144Hz(支持720Hz多指触控采样率)，屏幕还支持DC调光和MEMC，配备了磁动力升降肩键，支持120W闪充
+          image: https://iainixzy-image-1304973859.cos.ap-shanghai.myqcloud.com//%E9%BB%91%E9%B2%A84
+          link: https://www.apple.com.cn/iphone-12/specs/
+        - name: 索尼Wi-1000X
+          specification: 19年1699购于京东至今为止陪伴了我4年之久 降噪现在也很抗打！
+          description: 第三代对比第二代提升很大，和我一样不喜欢入耳式耳机的可以入，空间音频等功能确实新颖，第一次使用有被惊艳到。
+          image: https://iainixzy-image-1304973859.cos.ap-shanghai.myqcloud.com//%E8%80%B3%E6%9C%BA
+          link: https://product.pconline.com.cn/mobile/redmi/1364027.html
+    - title: 出行
+      description: 用来出行的实物及设备
+      equipment_list:
+        - name: 联想龟壳电脑包
+          specification: 黑色
+          description: 退役前生产力拯救者R720,可以装17寸的神船
+          image: https://iainixzy-image-1304973859.cos.ap-shanghai.myqcloud.com//%E7%94%B5%E8%84%91%E5%8C%85
+          link: https://passport.jd.com/new/login.aspx?ReturnUrl=https%3A%2F%2Fitem.jd.com%2F100011269828.html&czLogin=1
+        - name: 波斯丹顿双肩包🎒
+          specification: 白色
+          description: 颜值抗打、面料不错、前侧后方都有拉链袋
+          image: https://iainixzy-image-1304973859.cos.ap-shanghai.myqcloud.com//%E6%B3%A2%E6%96%AF%E4%B8%B9%E9%A1%BF
+          link: https://item.m.jd.com/product/100027600270.html?utm_user=plusmember&gx=RnAomTM2bDbaws0Q_tFzXg4Ih8nimh0&gxd=RnAokW4NbT2NyZ9DqNFxDLZgXxwbvq0&ad_od=share&utm_source=androidapp&utm_medium=appshare&utm_campaign=t_335139774&utm_term=CopyURL
+    - title: 金色传说
+      description: 行走的取景器📸
+      equipment_list:
+        - name: 索尼A7M3
+          specification: 黑色
+          description: 索尼大法好 非常喜欢的一部相机 多数人为了拍段子或vlog的首选相机
+          image: https://iainixzy-image-1304973859.cos.ap-shanghai.myqcloud.com//%E7%9B%B8%E6%9C%BA
+          link: https://item.m.jd.com/product/6680137.html?utm_user=plusmember&gx=RnAomTM2bDbaws0Q_tFzXg4Ih8nimh0&gxd=RnAokW4NbT2NyZ9DqNFxDLZgXxwbvq0&ad_od=share&utm_source=androidapp&utm_medium=appshare&utm_campaign=t_335139774&utm_term=CopyURL
