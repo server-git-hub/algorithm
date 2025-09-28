@@ -13,7 +13,7 @@
   },
   "dependencies": {
     "@renbaoshuo/markdown-it-katex": "^2.0.2",
-    "hexo": "^7.0.0",
+    "hexo": "^8.0.0",
     "hexo-bilibili-bangumi": "^1.9.0",
     "hexo-blog-encrypt": "^3.1.9",
     "hexo-butterfly-envelope": "^1.0.15",
