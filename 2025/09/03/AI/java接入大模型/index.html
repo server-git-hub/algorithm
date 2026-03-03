@@ -1,0 +1,762 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="dark"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no"><title>java接入大模型 | 生活像一把无情刻刀！</title><meta name="author" content="生活像一把无情刻刀！"><meta name="copyright" content="生活像一把无情刻刀！"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#18171d"><meta name="mobile-web-app-capable" content="yes"><meta name="apple-touch-fullscreen" content="yes"><meta name="apple-mobile-web-app-title" content="java接入大模型"><meta name="application-name" content="java接入大模型"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="#18171d"><meta name="baidu-site-verification" content="codeva-1seBfzlf8q"><meta property="og:type" content="article"><meta property="og:title" content="java接入大模型"><meta property="og:url" content="http://example.com/2025/09/03/AI/java%E6%8E%A5%E5%85%A5%E5%A4%A7%E6%A8%A1%E5%9E%8B/index.html"><meta property="og:site_name" content="生活像一把无情刻刀！"><meta property="og:description" content="LangChain4J         java接入大模型的适配器    基本使用：1.    导入基础依赖            dev.langchain4j        langchain4j-open-ai        1.4.0        导入高阶依赖包(封装基础依赖中的API，使"><meta property="og:locale" content="zh-CN"><meta property="og:image" content="http://example.com/img/default_cover.jpg"><meta property="article:author" content="生活像一把无情刻刀！"><meta property="article:tag"><meta name="twitter:card" content="summary"><meta name="twitter:image" content="http://example.com/img/default_cover.jpg"><meta name="description" content="LangChain4J         java接入大模型的适配器    基本使用：1.    导入基础依赖            dev.langchain4j        langchain4j-open-ai        1.4.0        导入高阶依赖包(封装基础依赖中的API，使"><link rel="shortcut icon" href="/images/core.jpg"><link rel="canonical" href="http://example.com/2025/09/03/AI/java%E6%8E%A5%E5%85%A5%E5%A4%A7%E6%A8%A1%E5%9E%8B/"><link rel="preconnect" href="//cdn.cbd.int"/><link rel="preconnect" href="//hm.baidu.com"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><meta name="google-site-verification" content="xxx"/><meta name="baidu-site-verification" content="codeva-1seBfzlf8q"/><meta name="msvalidate.01" content="xxx"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.cbd.int/node-snackbar@0.1.16/dist/snackbar.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.cbd.int/@fancyapps/ui@5.0.28/dist/fancybox/fancybox.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://npm.elemecdn.com/anzhiyu-theme-static@1.0.0/swiper/swiper.min.css" media="print" onload="this.media='all'"><script>var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?41346cfe263bfdaf732d04b03bf5c0c7";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script><script>const GLOBAL_CONFIG = {
+  linkPageTop: {"enable":true,"title":"与数百名博主无限进步","addFriendPlaceholder":"昵称（请勿包含博客等字样）：\n网站地址（要求博客地址，请勿提交个人主页）：\n头像图片url（请提供尽可能清晰的图片，我会上传到我自己的图床）：\n描述：\n站点截图（可选）：\n"},
+  peoplecanvas: undefined,
+  postHeadAiDescription: {"enable":true,"gptName":"AnZhiYu","mode":"local","switchBtn":false,"btnLink":"https://afdian.net/item/886a79d4db6711eda42a52540025c377","randomNum":3,"basicWordCount":1000,"key":"xxxx","Referer":"https://xx.xx/"},
+  diytitle: {"enable":true,"leaveTitle":"w(ﾟДﾟ)w 不要走！再看看嘛！","backTitle":"♪(^∇^*)欢迎肥来！"},
+  LA51: undefined,
+  greetingBox: {"enable":true,"default":"晚上好👋","list":[{"greeting":"晚安😴","startTime":0,"endTime":5},{"greeting":"早上好鸭👋, 祝你一天好心情！","startTime":6,"endTime":9},{"greeting":"上午好👋, 状态很好，鼓励一下～","startTime":10,"endTime":10},{"greeting":"11点多啦, 在坚持一下就吃饭啦～","startTime":11,"endTime":11},{"greeting":"午安👋, 宝贝","startTime":12,"endTime":14},{"greeting":"🌈充实的一天辛苦啦！","startTime":14,"endTime":18},{"greeting":"19点喽, 奖励一顿丰盛的大餐吧🍔。","startTime":19,"endTime":19},{"greeting":"晚上好👋, 在属于自己的时间好好放松😌~","startTime":20,"endTime":24}]},
+  twikooEnvId: 'https://twikoo.937b.cn/',
+  commentBarrageConfig:{"enable":true,"maxBarrage":1,"barrageTime":4000,"accessToken":"631d63d3c7784afba5072a6ffc55586b","mailMd5":""},
+  music_page_default: "custom",
+  root: '/',
+  preloader: {"source":3},
+  friends_vue_info: undefined,
+  navMusic: true,
+  mainTone: undefined,
+  authorStatus: {"skills":["🤖️ 数码科技爱好者","🔍 分享与热心帮助","🏠 智能家居小能手","🔨 设计开发一条龙","🤝 专修交互与设计","🏃 脚踏实地行动派","🧱 团队小组发动机","💢 壮汉人狠话不多"]},
+  algolia: undefined,
+  localSearch: undefined,
+  translate: {"defaultEncoding":2,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"简","rightMenuMsgToTraditionalChinese":"转为繁体","rightMenuMsgToSimplifiedChinese":"转为简体"},
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":330},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    simplehomepage: false,
+    post: false
+  },
+  runtime: '天',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: {"copy":true,"copyrightEbable":true,"limitCount":50,"languages":{"author":"作者: 生活像一把无情刻刀！","link":"链接: ","source":"来源: 生活像一把无情刻刀！","info":"著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。","copySuccess":"复制成功，复制和转载请标注本文地址"}},
+  lightbox: 'fancybox',
+  Snackbar: {"chs_to_cht":"你已切换为繁体","cht_to_chs":"你已切换为简体","day_to_night":"你已切换为深色模式","night_to_day":"你已切换为浅色模式","bgLight":"#425AEF","bgDark":"#1f1f1f","position":"top-center"},
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.cbd.int/flickr-justified-gallery@2.1.2/dist/fjGallery.min.js',
+      css: 'https://cdn.cbd.int/flickr-justified-gallery@2.1.2/dist/fjGallery.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: true,
+  isAnchor: false,
+  shortcutKey: undefined,
+  autoDarkmode: true
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  configTitle: '生活像一把无情刻刀！',
+  title: 'java接入大模型',
+  postAI: '',
+  pageFillDescription: '接入大模型的适配器基本使用导入基础依赖导入高阶依赖包封装基础依赖中的使其更方便使用配置文件所属者模型名称模型所在地址使用配置类方式创建高阶使用根据构造高阶实现类基本使用低阶原生高阶封装封装信息其他配置配置日志请求日志响应日志需要将日志级别调整为配置监听创建监听实现接口请求时触发请求作用域中的内容可以在响应时拿到响应时触发可以拿到请求时的内容错误时触发配置监听实现了创建监听实现接口的实现类配置重试一共尝试次配置超时超时时间设置为视觉文申图使用解析图片专用的大模型将图片转换为调用大冒险并使用处理转换后的数据返回对象流式输出导入额外依赖配置使用构建对象低阶低阶流式返回模板自定义接口配置到容器中高阶直接使用中方法在为接口配置时已经实现了默认的流式动作记忆缓存记忆标识加到属性上用于封装记忆内容构建者模式注册高阶设定存放条记忆设置记忆最大数提示词工程第一种推荐设置限定词相当于在回答问题前约束大模型加到方法上指定提示词问题可以使用添加占位符使用使用属性赋值占位符第二种使用注解定义实体类添加注解并指定限定词可以使用添加占位符使用实体类属性赋值使用时输入该实体类注解会将实体类属性注入到占位符第三种使用模板提示词模板渲染提示词为占位符赋值方法一编码式实现指定了工具说明和工具逻辑工具说明根据信息开具发票公司名称税号金额业务逻辑开具成功方法二注解式实现工具说明工具的说明信息参数信息工具所需参数信息函数拥有调用第三方语言的能力支持导入依赖的的的工具的工具向量存储特征相似度计算向量通用向量模型用于文申向量向量操作用于对向量进行操作增删改查基本使用导入依赖例如使用添加文申向量模型添加向量数据库客户端添加向量操作模型基本使用文本向量化创建向量数据库实例新增数据库记录添加更多信息添加更多信息对数据库进行向量相似度查找咏鸡现代诗文本向量化模型向量数据库客户端对向量数据库操作向量查找模板检索增强生成导入依赖添加内存向量数据库可选其他向量数据库构建高阶时加入增强加入增强关键加入增强基本使用我叫什么我多少岁的工具类批量的将原始文档存储到中整合低阶高阶注解自动将使用通过创建实现类根据需求配置参数模型上下文协议的升级版重要基于实现因为目前对支持并没有好服务端导入依赖配置文件基本使用根据城市名称获取天气信息根据实际需求调用其他服务北京晴朗上海雷雨南京暴雨抱歉所查询的城市不存在配置类将工具业务注入到工具方法暴露出去客户端导入依赖配置文件大模型的大模型的地址具体模型异步方式请求超时时间开启客户端发现工具调用工具能力流式配置访问的服务配置类协议详情见配置文件',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: false,
+  postUpdate: '2026-03-03 21:41:25',
+  postMainColor: '',
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+      win.saveToLocal = {
+        set: (key, value, ttl) => {
+          if (ttl === 0) return
+          const now = Date.now()
+          const expiry = now + ttl * 86400000
+          const item = {
+            value,
+            expiry
+          }
+          localStorage.setItem(key, JSON.stringify(item))
+        },
+      
+        get: key => {
+          const itemStr = localStorage.getItem(key)
+      
+          if (!itemStr) {
+            return undefined
+          }
+          const item = JSON.parse(itemStr)
+          const now = Date.now()
+      
+          if (now > item.expiry) {
+            localStorage.removeItem(key)
+            return undefined
+          }
+          return item.value
+        }
+      }
+    
+      win.getScript = (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        script.onerror = reject
+        script.onload = script.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          script.onload = script.onreadystatechange = null
+          resolve()
+        }
+
+        Object.keys(attr).forEach(key => {
+          script.setAttribute(key, attr[key])
+        })
+
+        document.head.appendChild(script)
+      })
+    
+      win.getCSS = (url, id = false) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onerror = reject
+        link.onload = link.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          link.onload = link.onreadystatechange = null
+          resolve()
+        }
+        document.head.appendChild(link)
+      })
+    
+      win.activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#18171d')
+        }
+      }
+      win.activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#f7f9fe')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          const isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches
+          const isLightMode = window.matchMedia('(prefers-color-scheme: light)').matches
+          const isNotSpecified = window.matchMedia('(prefers-color-scheme: no-preference)').matches
+          const hasNoSupport = !isDarkMode && !isLightMode && !isNotSpecified
+
+          if (t === undefined) {
+            if (isLightMode) activateLightMode()
+            else if (isDarkMode) activateDarkMode()
+            else if (isNotSpecified || hasNoSupport) {
+              const now = new Date()
+              const hour = now.getHours()
+              const isNight = hour <= 6 || hour >= 18
+              isNight ? activateDarkMode() : activateLightMode()
+            }
+            window.matchMedia('(prefers-color-scheme: dark)').addListener(e => {
+              if (saveToLocal.get('theme') === undefined) {
+                e.matches ? activateDarkMode() : activateLightMode()
+              }
+            })
+          } else if (t === 'light') activateLightMode()
+          else activateDarkMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+      const detectApple = () => {
+        if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+          document.documentElement.classList.add('apple')
+        }
+      }
+      detectApple()
+    })(window)</script><meta name="generator" content="Hexo 7.3.0"></head><body data-type="anzhiyu"><div id="web_bg"></div><div id="an_music_bg"></div><div id="loading-box" onclick="document.getElementById(&quot;loading-box&quot;).classList.add(&quot;loaded&quot;)"><div class="loading-bg"><img class="loading-img nolazyload" alt="加载头像" src="/images/core.jpg"/><div class="loading-image-dot"></div></div></div><script>const preloader = {
+  endLoading: () => {
+    document.getElementById('loading-box').classList.add("loaded");
+  },
+  initLoading: () => {
+    document.getElementById('loading-box').classList.remove("loaded")
+  }
+}
+window.addEventListener('load',()=> { preloader.endLoading() })
+setTimeout(function(){preloader.endLoading();},10000)
+
+if (true) {
+  document.addEventListener('pjax:send', () => { preloader.initLoading() })
+  document.addEventListener('pjax:complete', () => { preloader.endLoading() })
+}</script><link rel="stylesheet" href="https://cdn.cbd.int/anzhiyu-theme-static@1.1.10/progress_bar/progress_bar.css"/><script async="async" src="https://cdn.cbd.int/pace-js@1.2.4/pace.min.js" data-pace-options="{ &quot;restartOnRequestAfter&quot;:false,&quot;eventLag&quot;:false}"></script><div class="post" id="body-wrap"><header class="post-bg" id="page-header"><nav id="nav"><div id="nav-group"><span id="blog_name"><div class="back-home-button"><i class="anzhiyufont anzhiyu-icon-grip-vertical"></i><div class="back-menu-list-groups"><div class="back-menu-list-group"><div class="back-menu-list-title">项目</div><div class="back-menu-list"><a class="back-menu-item" target="_blank" rel="noopener external nofollow noreferrer" href="https://tokenblog.cn/" title="博客"><img class="back-menu-item-icon" src="/images/core.jpg" alt="博客"/><span class="back-menu-item-text">博客</span></a></div></div></div></div><a id="site-name" href="/" accesskey="h"><div class="title">生活像一把无情刻刀！</div><i class="anzhiyufont anzhiyu-icon-house-chimney"></i></a></span><div class="mask-name-container"><div id="name-container"><a id="page-name" href="javascript:anzhiyu.scrollToDest(0, 500)" rel="external nofollow noreferrer">PAGE_NAME</a></div></div><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="javascript:void(0);" rel="external nofollow noreferrer"><span> 文章</span></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="/archives/"><i class="anzhiyufont anzhiyu-icon-box-archive faa-tada" style="font-size: 0.9em;"></i><span> 总览</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/categories/"><i class="anzhiyufont anzhiyu-icon-shapes faa-tada" style="font-size: 0.9em;"></i><span> 分类</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/tags/"><i class="anzhiyufont anzhiyu-icon-tags faa-tada" style="font-size: 0.9em;"></i><span> 标签</span></a></li></ul></div><div class="menus_item"><a class="site-page faa-parent animated-hover" href="/link/"><span> 友链</span></a></div><div class="menus_item"><a class="site-page faa-parent animated-hover" href="/music/"><span> 音乐馆</span></a></div><div class="menus_item"><a class="site-page faa-parent animated-hover" href="/album/"><span> 图库</span></a></div><div class="menus_item"><a class="site-page" href="javascript:void(0);" rel="external nofollow noreferrer"><span> 关于</span></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="/essay/"><i class="anzhiyufont anzhiyu-icon-lightbulb faa-tada" style="font-size: 0.9em;"></i><span> 闲言碎语</span></a></li><li><a class="site-page child faa-parent animated-hover" href="javascript:toRandomPost()" rel="external nofollow noreferrer"><i class="anzhiyufont anzhiyu-icon-shoe-prints1 faa-tada" style="font-size: 0.9em;"></i><span> 随便逛逛</span></a></li></ul></div></div></div><div id="nav-right"><div class="nav-button" id="randomPost_button"><a class="site-page" onclick="toRandomPost()" title="随机前往一个文章" href="javascript:void(0);" rel="external nofollow noreferrer"><i class="anzhiyufont anzhiyu-icon-dice"></i></a></div><input id="center-console" type="checkbox"/><label class="widget" for="center-console" title="中控台" onclick="anzhiyu.switchConsole();"><i class="left"></i><i class="widget center"></i><i class="widget right"></i></label><div id="console"><div class="console-card-group-reward"><ul class="reward-all console-card"><li class="reward-item"><a href="https://npm.elemecdn.com/anzhiyu-blog@1.1.6/img/post/common/qrcode-weichat.png" rel="external nofollow noreferrer" target="_blank"><img class="post-qr-code-img" alt="微信" src="https://npm.elemecdn.com/anzhiyu-blog@1.1.6/img/post/common/qrcode-weichat.png"/></a><div class="post-qr-code-desc">微信</div></li><li class="reward-item"><a href="https://npm.elemecdn.com/anzhiyu-blog@1.1.6/img/post/common/qrcode-alipay.png" rel="external nofollow noreferrer" target="_blank"><img class="post-qr-code-img" alt="支付宝" src="https://npm.elemecdn.com/anzhiyu-blog@1.1.6/img/post/common/qrcode-alipay.png"/></a><div class="post-qr-code-desc">支付宝</div></li></ul></div><div class="console-card-group"><div class="console-card-group-left"><div class="console-card" id="card-console-newest-comments"><div class="card-content"><div class="author-content-item-tips">互动</div><span class="author-content-item-title"> 最新评论</span></div><div class="aside-list"><span>正在加载中...</span></div></div></div><div class="console-card-group-right"><div class="console-card tags"><div class="card-content"><div class="author-content-item-tips">兴趣点</div><span class="author-content-item-title">寻找你感兴趣的领域</span></div></div><div class="console-card history"><div class="item-headline"><i class="anzhiyufont anzhiyu-icon-box-archiv"></i><span>文章</span></div><div class="card-archives"><div class="item-headline"><i class="anzhiyufont anzhiyu-icon-archive"></i><span>归档</span></div><ul class="card-archive-list"><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2026/02/"><span class="card-archive-list-date">二月 2026</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">1</span><span>篇</span></div></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2026/01/"><span class="card-archive-list-date">一月 2026</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">16</span><span>篇</span></div></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2025/10/"><span class="card-archive-list-date">十月 2025</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">2</span><span>篇</span></div></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2025/09/"><span class="card-archive-list-date">九月 2025</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">9</span><span>篇</span></div></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2025/08/"><span class="card-archive-list-date">八月 2025</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">8</span><span>篇</span></div></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2025/07/"><span class="card-archive-list-date">七月 2025</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">3</span><span>篇</span></div></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2025/06/"><span class="card-archive-list-date">六月 2025</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">73</span><span>篇</span></div></a></li></ul></div><hr/></div></div></div><div class="button-group"><div class="console-btn-item"><a class="darkmode_switchbutton" title="显示模式切换" href="javascript:void(0);" rel="external nofollow noreferrer"><i class="anzhiyufont anzhiyu-icon-moon"></i></a></div><div class="console-btn-item" id="consoleHideAside" onclick="anzhiyu.hideAsideBtn()" title="边栏显示控制"><a class="asideSwitch"><i class="anzhiyufont anzhiyu-icon-arrows-left-right"></i></a></div><div class="console-btn-item on" id="consoleCommentBarrage" onclick="anzhiyu.switchCommentBarrage()" title="热评开关"><a class="commentBarrage"><i class="anzhiyufont anzhiyu-icon-message"></i></a></div><div class="console-btn-item" id="consoleMusic" onclick="anzhiyu.musicToggle()" title="音乐开关"><a class="music-switch"><i class="anzhiyufont anzhiyu-icon-music"></i></a></div></div><div class="console-mask" onclick="anzhiyu.hideConsole()" href="javascript:void(0);" rel="external nofollow noreferrer"></div></div><div class="nav-button" id="nav-totop"><a class="totopbtn" href="javascript:void(0);" rel="external nofollow noreferrer"><i class="anzhiyufont anzhiyu-icon-arrow-up"></i><span id="percent" onclick="anzhiyu.scrollToDest(0,500)">0</span></a></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);" rel="external nofollow noreferrer" title="切换"><i class="anzhiyufont anzhiyu-icon-bars"></i></a></div></div></div></nav><div id="post-info"><div id="post-firstinfo"><div class="meta-firstline"><a class="post-meta-original">原创</a><span class="post-meta-categories"><span class="post-meta-separator"></span><i class="anzhiyufont anzhiyu-icon-inbox post-meta-icon"></i><a class="post-meta-categories" href="/categories/AI/" itemprop="url">AI</a></span><span class="article-meta tags"></span></div></div><h1 class="post-title" itemprop="name headline">java接入大模型</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="anzhiyufont anzhiyu-icon-calendar-days post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" itemprop="dateCreated datePublished" datetime="2025-09-03T02:38:36.000Z" title="发表于 2025-09-03 10:38:36">2025-09-03</time><span class="post-meta-separator"></span><i class="anzhiyufont anzhiyu-icon-history post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" itemprop="dateCreated datePublished" datetime="2026-03-03T13:41:25.532Z" title="更新于 2026-03-03 21:41:25">2026-03-03</time></span></div><div class="meta-secondline"><span class="post-meta-separator"></span><span class="post-meta-wordcount"><i class="anzhiyufont anzhiyu-icon-file-word post-meta-icon" title="文章字数"></i><span class="post-meta-label" title="文章字数">字数总计:</span><span class="word-count" title="文章字数">2k</span><span class="post-meta-separator"></span><i class="anzhiyufont anzhiyu-icon-clock post-meta-icon" title="阅读时长"></i><span class="post-meta-label" title="阅读时长">阅读时长:</span><span>9分钟</span></span><span class="post-meta-separator"></span><span class="post-meta-pv-cv" id="" data-flag-title="java接入大模型"><i class="anzhiyufont anzhiyu-icon-fw-eye post-meta-icon"></i><span class="post-meta-label" title="阅读量">阅读量:</span><span id="busuanzi_value_page_pv"><i class="anzhiyufont anzhiyu-icon-spinner anzhiyu-spin"></i></span></span><span class="post-meta-separator">       </span><span class="post-meta-position" title="作者IP属地为济南"><i class="anzhiyufont anzhiyu-icon-location-dot"></i>济南</span></div></div></div><section class="main-hero-waves-area waves-area"><svg class="waves-svg" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto"><defs><path id="gentle-wave" d="M -160 44 c 30 0 58 -18 88 -18 s 58 18 88 18 s 58 -18 88 -18 s 58 18 88 18 v 44 h -352 Z"></path></defs><g class="parallax"><use href="#gentle-wave" x="48" y="0"></use><use href="#gentle-wave" x="48" y="3"></use><use href="#gentle-wave" x="48" y="5"></use><use href="#gentle-wave" x="48" y="7"></use></g></svg></section><div id="post-top-cover"><img class="nolazyload" id="post-top-bg" src="/img/default_cover.jpg"></div></header><main id="blog-container"><div class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container" itemscope itemtype="http://example.com/2025/09/03/AI/java%E6%8E%A5%E5%85%A5%E5%A4%A7%E6%A8%A1%E5%9E%8B/"><header><a class="post-meta-categories" href="/categories/AI/" itemprop="url">AI</a><h1 id="CrawlerTitle" itemprop="name headline">java接入大模型</h1><span itemprop="author" itemscope itemtype="http://schema.org/Person">生活像一把无情刻刀！</span><time itemprop="dateCreated datePublished" datetime="2025-09-03T02:38:36.000Z" title="发表于 2025-09-03 10:38:36">2025-09-03</time><time itemprop="dateCreated datePublished" datetime="2026-03-03T13:41:25.532Z" title="更新于 2026-03-03 21:41:25">2026-03-03</time></header><p>LangChain4J         java接入大模型的适配器   </p>
+<p>基本使用：<br>1.<br>    导入基础依赖<br>    <dependency><br>        <groupId>dev.langchain4j</groupId><br>        <artifactId>langchain4j-open-ai</artifactId><br>        <version>1.4.0</version><br>    </dependency><br>    导入高阶依赖包(封装基础依赖中的API，使其更方便)<br>    <dependency><br>        <groupId>dev.langchain4j</groupId><br>        <artifactId>langchain4j</artifactId><br>        <version>1.4.0</version><br>    </dependency><br>2.  使用yml配置文件<br>    langchain4j.open-ai.chat-model.api-key&#x3D;${OPENAI_API_KEY}    所属者<br>    langchain4j.open-ai.chat-model.model-name&#x3D;gpt-4o       模型名称<br>    langchain4j.open-ai.chat-model.base-url&#x3D;<a target="_blank" rel="noopener external nofollow noreferrer" href="https://dashscope.aliyuncs.com/compatible-mode/v1">https://dashscope.aliyuncs.com/compatible-mode/v1</a>      模型所在地址<br>2.1 使用配置类方式<br>    @Configuration<br>    public class ChatLanguageModelConfig {</p>
+<pre><code>    @Bean
+    public ChatLanguageModel chatLanguageModel() &#123;
+        return OpenAiChatModel.builder()
+                .apiKey(&quot;$&#123;OPENAI_API_KEY&#125;&quot;)
+                .baseUrl(&quot;https://dashscope.aliyuncs.com/compatible-mode/v1&quot;)
+                .modelName(&quot;qwen-plus&quot;)
+                .build();
+    &#125;
+&#125;
+</code></pre>
+<p>2.2 创建高阶API<br>    @Bean<br>    public ChatService chatService(ChatLanguageModel chatLanguageModel) {<br>        return AiServices.create(ChatService.class,chatLanguageModel);<br>    }<br>    使用AiServices.create根据ChatLanguageModel构造高阶API实现类<br>3.基本使用<br>    ChatLanguageModel     低阶API(原生API)<br>    AIService    高阶API(封装API)</p>
+<pre><code>封装信息：
+    UserMessage.from(&quot;&quot;)
+</code></pre>
+<p>4.其他配置<br>配置日志：<br>    langchain4j.open-ai.chat-model.log-requests&#x3D;true     请求日志<br>    langchain4j.open-ai.chat-model.log-responses&#x3D;true    响应日志<br>    需要将日志级别调整为debug<br>配置监听：<br>    创建监听实现ChatModelListener接口<br>        onRequest    请求时触发，请求作用域中的内容可以在响应时拿到<br>        onResponse   响应时触发，可以拿到请求时的内容<br>        onError    错误时触发<br>    配置监听：<br>        .listeners(List.of(new 实现了创建监听实现ChatModelListener接口的实现类))<br>配置重试：<br>    .maxRetries(2)    一共尝试2次<br>配置超时：<br>    .timeout(Duration.ofSeconds(10))     超时时间设置为10s</p>
+<p>视觉：<br>    文申图：<br>        1.使用解析图片专用的大模型<br>        2.将图片转换为Base64，<br>        3.调用大冒险，并使用UserMessage.from处理转换后的Base64数据<br>        4.返回ChatResponse对象</p>
+<p>流式输出：<br>1.导入额外依赖<br>    <dependency><br>        <groupId>dev.langchain4j</groupId><br>        <artifactId>langchain4j-reactor</artifactId><br>        <version>1.0.0-beta3</version><br>    </dependency><br>2.配置<br>    @Configuration<br>    public class ChatLanguageModelConfig {</p>
+<pre><code>    @Bean
+    public StreamingChatLanguageModel streamingChatLanguageModel() &#123;
+        return OpenAiStreamingChatModel.builder()
+                .apiKey(&quot;$&#123;OPENAI_API_KEY&#125;&quot;)
+                .baseUrl(&quot;https://dashscope.aliyuncs.com/compatible-mode/v1&quot;)
+                .modelName(&quot;qwen-plus&quot;)
+                .build();
+    &#125;
+&#125;
+使用OpenAiStreamingChatModel构建StreamingChatLanguageModel对象
+API：
+    StreamingChatLanguageModel      低阶API
+    低阶流式返回模板
+        Flux.create(stringFluxSink -&gt; &#123;
+            streamingChatLanguageModel.chat(prompt, new StreamingChatResponseHandler() &#123;
+                @Override
+                public void onPartialResponse(String s) &#123;
+                    stringFluxSink.next(s);
+                &#125;
+
+                @Override
+                public void onCompleteResponse(ChatResponse chatResponse) &#123;
+                    stringFluxSink.complete();
+                &#125;
+
+                @Override
+                public void onError(Throwable throwable) &#123;
+                    stringFluxSink.error(throwable);
+                &#125;
+            &#125;);
+        &#125;);
+    自定义接口，配置到Spring容器中    高阶API
+    直接使用API中方法，在为接口配置时，已经实现了默认的流式动作
+</code></pre>
+<p>记忆缓存：<br>    @Memory   记忆标识<br>    @UserMessage   加到属性上，用于封装记忆内容<br>    构建者模式注册高阶API<br>    @Bean<br>    public ChatService chatLongService(ChatLanguageModel chatLanguageModel) {<br>        return AiServices.builder(ChatService.class)<br>                .chatLanguageModel(chatLanguageModel)<br>                .chatMemoryProvider(memoryId -&gt; MessageWindowChatMemory.withMaxMessages(100))    设定memoryId存放100条记忆</p>
+<pre><code>            .build();
+&#125;
+
+memoryId -&gt; TokenWindowChatMemory.withMaxTokens()  设置记忆最大token数
+</code></pre>
+<p>提示词工程：<br>    第一种(推荐)<br>    @SystemMessage      设置限定词，相当于在回答问题前，约束大模型<br>    @UserMessage    加到方法上，指定提示词(问题)，可以使用添加占位符，使用@V使用属性赋值占位符<br>    第二种<br>    使用@StructuredPrompt注解<br>    定义实体类，添加@StructuredPrompt注解并指定限定词，可以使用添加占位符，使用实体类属性赋值，使用时输入该实体类，@StructuredPrompt注解会将实体类属性注入到占位符<br>    第三种<br>    使用PromptTemplate模板，提示词模板渲染<br>    PromptTemplate promptTemplate&#x3D;PromptTemplate.from(“”);   提示词<br>    Prompt prompt&#x3D;promptTemplate.apply(“”);   为占位符赋值</p>
+<p>Tools(Function calling)<br>    方法一：编码式实现<br>    指定了工具说明和工具逻辑<br>        @Bean<br>        public FunctionService functionService(ChatLanguageModel chatLanguageModel) {<br>            &#x2F;&#x2F;工具说明ToolSpecification<br>            ToolSpecification toolSpecification&#x3D;ToolSpecification.builder()<br>                    .name(“assistant”)<br>                    .description(“根据信息开具发票”)<br>                    .parameters(JsonObjectSchema.builder()<br>                            .addStringProperty(“companyName”,”公司名称”)<br>                            .addStringProperty(“dutyNumber”,”税号”)<br>                            .addStringProperty(“amount”,”金额”)<br>                            .build())<br>                    .build();<br>            &#x2F;&#x2F;业务逻辑ToolExecutor<br>            ToolExecutor toolExecutor&#x3D;(toolExecutionRequest,memoryId) -&gt;{<br>                System.out.println(toolExecutionRequest.id());<br>                System.out.println(toolExecutionRequest.name());<br>                System.out.println(toolExecutionRequest.arguments());<br>                return “开具成功”;<br>            };<br>            return AiServices.builder(FunctionService.class)<br>                    .chatLanguageModel(chatLanguageModel)<br>                    .tools(Map.of(toolSpecification, toolExecutor))<br>                    .build();<br>        }<br>    方法二：注解式实现<br>    @Tool(工具说明)   工具的说明信息<br>    @P(参数信息)    工具所需参数信息</p>
+<p>GraalVm函数<br>    拥有调用第三方语言的能力，支持javascript，python<br>    1.导入依赖<br>    <dependency><br>        <groupId>dev.langchain4j</groupId><br>        <artifactId>langchain4j-code-execution-engine-graalvm-polyglot</artifactId><br>        <version>1.4.0-beta10</version><br>    </dependency><br>    2.API<br>    CodeExecutionEngine javascript&#x3D;new GraalVmJavaScriptExecutionEngine();  javascript的API<br>    CodeExecutionEngine python&#x3D;new GraalVmPythonExecutionEngine();    python的API<br>    GraalVmJavaScriptExecutionTool   javascript的tool工具<br>    GraalVmPythonExecutionTool       python的tool工具</p>
+<p>向量存储  (特征：相似度计算)<br>    向量通用API：<br>        EmbeddingModel   向量模型API(用于文申向量)<br>        EmbeddingSearchRequest    向量操作API(用于对向量进行操作，增删改查)</p>
+<pre><code>基本使用：
+    导入依赖(例如使用Qdrant)
+    &lt;dependency&gt;
+        &lt;groupId&gt;dev.langchain4j&lt;/groupId&gt;
+        &lt;artifactId&gt;langchain4j-qdrant&lt;/artifactId&gt;
+    &lt;/dependency&gt;
+添加文申向量模型
+@Bean
+public EmbeddingModel embeddingModel() &#123;
+    return OpenAiEmbeddingModel.builder()
+            .apiKey(System.getenv(&quot;aliQwen-api&quot;))
+            .modelName(&quot;text-embedding-v3&quot;)
+            .baseUrl(&quot;https://dashscope.aliyuncs.com/compatible-mode/v1&quot;)
+            .build();
+&#125;
+添加向量数据库Qdrant客户端
+@Bean
+public QdrantClient qdrantClient() &#123;
+    QdrantGrpcClient.Builder grpcClientBuilder =
+            QdrantGrpcClient.newBuilder(&quot;127.0.0.1&quot;,
+                    6334, false);
+    return new QdrantClient(grpcClientBuilder.build());
+&#125;
+添加向量操作模型
+@Bean
+public EmbeddingStore&lt;TextSegment&gt; embeddingStore() &#123;
+    return QdrantEmbeddingStore.builder()
+            .host(&quot;127.0.0.1&quot;)
+            .port(6334)
+            .collectionName(&quot;test-qdrant&quot;)
+            .build();
+&#125;
+
+基本使用
+文本向量化
+public String embed(@RequestParam(value = &quot;prompt&quot;,defaultValue = &quot;&quot;) String prompt)
+&#123;
+    Response&lt;Embedding&gt; embeddingResponse = embeddingModel.embed(prompt);
+
+    System.out.println(embeddingResponse);
+
+    return embeddingResponse.content().toString();
+&#125;
+创建向量数据库实例
+public void createCollection()
+&#123;
+    var vectorParams = Collections.VectorParams.newBuilder()
+            .setDistance(Collections.Distance.Cosine)
+            .setSize(1024)
+            .build();
+    qdrantClient.createCollectionAsync(&quot;test-qdrant&quot;, vectorParams);
+&#125;
+新增数据库记录
+public String add(@RequestParam(value = &quot;prompt&quot;,defaultValue = &quot;&quot;) String prompt)
+&#123;
+    TextSegment segment1 = TextSegment.from(prompt);
+    segment1.metadata().put(&quot;author&quot;, &quot;zzyy&quot;);   //添加更多信息
+    segment1.metadata().put(&quot;UserId&quot;, &quot;1111&quot;);   //添加更多信息
+    Embedding embedding1 = embeddingModel.embed(segment1).content();
+    String result = embeddingStore.add(embedding1, segment1);
+
+    System.out.println(result);
+
+    return result;
+&#125;
+对数据库进行向量相似度查找
+public void query1()&#123;
+    Embedding queryEmbedding = embeddingModel.embed(&quot;咏鸡现代诗&quot;).content();
+    EmbeddingSearchRequest embeddingSearchRequest = EmbeddingSearchRequest.builder()
+            .queryEmbedding(queryEmbedding)
+            .maxResults(1)
+            .build();
+    EmbeddingSearchResult&lt;TextSegment&gt; searchResult = embeddingStore.search(embeddingSearchRequest);
+    System.out.println(searchResult.matches().get(0).embedded().text());
+&#125;
+
+API：
+    QdrantEmbeddingStore
+    EmbeddingModel   文本向量化模型
+    QdrantClient     向量数据库客户端
+    EmbeddingStore&lt;TextSegment&gt;   对向量数据库操作
+    EmbeddingSearchRequest    向量查找模板
+</code></pre>
+<p>RAG(检索增强生成)<br>    1.导入依赖<br>    <dependency><br>        <groupId>dev.langchain4j</groupId><br>        <artifactId>langchain4j-easy-rag</artifactId><br>        <version>1.4.0-beta10</version><br>    </dependency><br>    2.添加InMemoryEmbeddingStore(内存向量数据库)(可选其他向量数据库)<br>    @Bean<br>    public InMemoryEmbeddingStore<TextSegment> embeddingStore() {<br>        return new InMemoryEmbeddingStore&lt;&gt;();<br>    }<br>    3.构建高阶API时加入RAG增强<br>    @Bean<br>    public ChatAssistant assistant(ChatLanguageModel chatLanguageModel, EmbeddingStore<TextSegment> embeddingStore) {<br>        return AiServices.builder(ChatAssistant.class)<br>                .chatLanguageModel(chatLanguageModel)<br>                .chatMemory(MessageWindowChatMemory.withMaxMessages(100))<br>                .contentRetriever(EmbeddingStoreContentRetriever.from(embeddingStore)) &#x2F;&#x2F;加入增强<br>                .build();<br>    }<br>    关键： .contentRetriever(EmbeddingStoreContentRetriever.from(embeddingStore))  加入增强</p>
+<pre><code>4.基本使用
+public String RAGhello(@RequestParam(value = &quot;prompt&quot;,defaultValue = &quot;我叫什么，我多少岁&quot;) String prompt)&#123;
+    Document document= FileSystemDocumentLoader.loadDocument(&quot;D:\\java.docx&quot;);
+    EmbeddingStoreIngestor.ingest(document, embeddingStore);
+    String res=ragService.chat(prompt);
+    System.out.println(res);
+    return res;
+&#125;
+
+EmbeddingStoreIngestor    EmbeddingStore的工具类，批量的将原始文档存储到EmbeddingStore中
+</code></pre>
+<p>SpringBoot整合<br>    低阶API<br>    <dependency><br>        <groupId>dev.langchain4j</groupId><br>        <artifactId>langchain4j-open-ai-spring-boot-starter</artifactId><br>        <version>1.0.0-beta3</version><br>    </dependency><br>    高阶API<br>    <dependency><br>        <groupId>dev.langchain4j</groupId><br>        <artifactId>langchain4j-spring-boot-starter</artifactId><br>        <version>1.0.0-beta3</version><br>    </dependency></p>
+<pre><code>@AiService注解   自动将Service使用AiService通过ChatLanguageModel创建实现类，根据需求配置参数
+</code></pre>
+<p>MCP  模型上下文协议(Function calling的升级版)(重要)(基于SpringAI实现,因为LangChain4J目前对MCP支持并没有SpringAI好)<br>  服务端：<br>    导入依赖：<br>    <dependency><br>        <groupId>org.springframework.ai</groupId><br>        <artifactId>spring-ai-starter-mcp-server-webflux</artifactId><br>        <version>1.0.0</version><br>    </dependency><br>    配置文件<br>    spring.ai.mcp.server.type&#x3D;async<br>    基本使用<br>    @Tool(“根据城市名称获取天气信息”)<br>    public String weather(String city){&#x2F;&#x2F;根据实际需求调用其他服务<br>        Map&lt;String,String&gt; map&#x3D;Map.of(<br>                “北京”,”晴朗”,<br>                “上海”,”雷雨”,<br>                “南京”,”暴雨”<br>        );<br>        return map.getOrDefault(city,”抱歉，所查询的城市不存在”);<br>    }<br>    配置类<br>    @Bean<br>    public ToolCallbackProvider toolCallbackProvider(){<br>        return MethodToolCallbackProvider.builder()<br>                .toolObjects(mcpService)   &#x2F;&#x2F;将工具业务注入到MCP，(工具方法暴露出去)<br>                .build();<br>    }<br>  客户端：<br>    导入依赖：<br>        <dependency><br>            <groupId>org.springframework.ai</groupId><br>            <artifactId>spring-ai-starter-mcp-client</artifactId><br>            <version>1.0.0</version><br>        </dependency></p>
+<pre><code>    &lt;dependency&gt;
+        &lt;groupId&gt;org.springframework.ai&lt;/groupId&gt;
+        &lt;artifactId&gt;spring-ai-starter-model-openai&lt;/artifactId&gt;
+        &lt;version&gt;1.0.0&lt;/version&gt;
+    &lt;/dependency&gt;
+配置文件：
+    spring:
+      ai:
+        openai:
+          api-key: $&#123;deepseek.key&#125;    //大模型的api-key
+          base-url: https://api.deepseek.com   //大模型的url地址
+          chat:
+            options:
+              model: deepseek-chat     //具体模型
+      mcp:
+        client:
+        type: async      //异步方式
+        request-timeout: 30s       //请求超时时间
+        toolcallback:
+          enabled: true      //开启客户端发现工具，调用工具能力
+        sse:             //流式
+          connections:    //配置访问的服务
+            mcp-server-1:       
+              url: http://localhost:8080
+#           mcp-server-2:
+#             url:
+配置类：
+public ChatClient chatClient(ChatModel chatModel, ToolCallbackProvider toolCallbackProvider) &#123;
+   return ChatClient.builder(chatModel)
+           .defaultToolCallbacks(toolCallbackProvider.getToolCallbacks())    //mcp协议，详情见配置文件
+           .build();
+&#125;
+</code></pre>
+</article><div class="post-copyright"><div class="copyright-cc-box"><i class="anzhiyufont anzhiyu-icon-copyright"></i></div><div class="post-copyright__author_box"><a class="post-copyright__author_img" href="/" title="头像"><img class="post-copyright__author_img_back" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="/images/core.jpg" title="头像" alt="头像"><img class="post-copyright__author_img_front" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="/images/core.jpg" title="头像" alt="头像"></a><div class="post-copyright__author_name">生活像一把无情刻刀！</div><div class="post-copyright__author_desc">生活明朗, 万物可爱</div></div><div class="post-copyright__post__info"><a class="post-copyright__original" title="该文章为原创文章，注意版权协议" href="http://example.com/2025/09/03/AI/java%E6%8E%A5%E5%85%A5%E5%A4%A7%E6%A8%A1%E5%9E%8B/">原创</a><a class="post-copyright-title"><span onclick="rm.copyPageUrl('http://example.com/2025/09/03/AI/java%E6%8E%A5%E5%85%A5%E5%A4%A7%E6%A8%A1%E5%9E%8B/')">java接入大模型</span></a></div><div class="post-tools" id="post-tools"><div class="post-tools-left"><div class="rewardLeftButton"></div><div class="shareRight"><div class="share-link mobile"><div class="share-qrcode"><div class="share-button" title="使用手机访问这篇文章"><i class="anzhiyufont anzhiyu-icon-qrcode"></i></div><div class="share-main"><div class="share-main-all"><div id="qrcode" title="http://example.com/2025/09/03/AI/java%E6%8E%A5%E5%85%A5%E5%A4%A7%E6%A8%A1%E5%9E%8B/"></div><div class="reward-dec">使用手机访问这篇文章</div></div></div></div></div><div class="share-link weibo"><a class="share-button" target="_blank" href="https://service.weibo.com/share/share.php?title=java接入大模型&amp;url=http://example.com/2025/09/03/AI/java%E6%8E%A5%E5%85%A5%E5%A4%A7%E6%A8%A1%E5%9E%8B/&amp;pic=/img/default_cover.jpg" rel="external nofollow noreferrer noopener"><i class="anzhiyufont anzhiyu-icon-weibo"></i></a></div><script>function copyCurrentPageUrl() {
+  var currentPageUrl = window.location.href;
+  var input = document.createElement("input");
+  input.setAttribute("value", currentPageUrl);
+  document.body.appendChild(input);
+  input.select();
+  input.setSelectionRange(0, 99999);
+  document.execCommand("copy");
+  document.body.removeChild(input);
+}</script><div class="share-link copyurl"><div class="share-button" id="post-share-url" title="复制链接" onclick="copyCurrentPageUrl()"><i class="anzhiyufont anzhiyu-icon-link"></i></div></div></div></div></div><div class="post-copyright__notice"><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="external nofollow noreferrer" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="http://example.com" target="_blank">937blog</a>！</span></div></div><div class="post-tools-right"><div class="tag_share"><div class="post-meta__box"><div class="post-meta__box__tag-list"></div></div></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2025/08/19/%E5%85%B6%E4%BB%96%E5%86%85%E5%AE%B9/%E6%B1%87%E6%80%BB/"><img class="prev-cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="/img/default_cover.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">汇总</div></div></a></div><div class="next-post pull-right"><a href="/2025/09/10/%E5%85%B3%E4%BA%8E%E5%89%8D%E7%AB%AF/vue/"><img class="next-cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="/img/default_cover.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">vue</div></div></a></div></nav><hr/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="anzhiyufont anzhiyu-icon-comments"></i><span> 评论</span></div><div class="comment-randomInfo"><a onclick="anzhiyu.addRandomCommentInfo()" href="javascript:void(0)" rel="external nofollow noreferrer">匿名评论</a><a href="/privacy" style="margin-left: 4px">隐私政策</a></div><div class="comment-tips" id="comment-tips"><span>✅ 你无需删除空行，直接评论以获取最佳展示效果</span></div></div><div class="comment-wrap"><div><div id="twikoo-wrap"></div></div></div></div><div class="comment-barrage"></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="card-content"><div class="author-info__sayhi" id="author-info__sayhi" onclick="anzhiyu.changeSayHelloText()"></div><div class="author-info-avatar"><img class="avatar-img" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="/images/core.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/><div class="author-status"><img class="g-status" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://bu.dusays.com/2023/08/24/64e6ce9c507bb.png" alt="status"/></div></div><div class="author-info__description"><div style="line-height:1.38;margin:0.6rem 0;text-align:justify;color:rgba(255, 255, 255, 0.8);">这有关于<b style="color:#fff">开发、运维等教程</b>相关的问题和看法，还有<b style="color:#fff">文章推荐</b>和<b style="color:#fff">分享</b>。</div><div style="line-height:1.38;margin:0.6rem 0;text-align:justify;color:rgba(255, 255, 255, 0.8);">多数文章是对自己的查缺补漏并拓展知识的总结（结合AI工具生成），希望能够对你有帮助。</div></div><div class="author-info__bottom-group"><a class="author-info__bottom-group-left" href="/about"><h1 class="author-info__name">生活像一把无情刻刀！</h1><div class="author-info__desc">生活明朗, 万物可爱</div></a><div class="card-info-social-icons is-center"><a class="social-icon faa-parent animated-hover" href="/" target="_blank" title="Github"><i class="anzhiyufont anzhiyu-icon-github"></i></a><a class="social-icon faa-parent animated-hover" href="/" target="_blank" title="BiliBili"><i class="anzhiyufont anzhiyu-icon-bilibili"></i></a></div></div></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="anzhiyufont anzhiyu-icon-bullhorn anzhiyu-shake"></i><span>欢迎</span></div><div class="announcement_content"><span>👋🏻 Hi，我是tokenblog，欢迎你！</span><br> <span>❓ 如有问题欢迎评论区交流！</span><br> <span>😫 页面异常？尝试<kbd>Ctrl</kbd>+<kbd>F5</kbd></span><br> <div id="welcome-info"></div></div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="anzhiyufont anzhiyu-icon-history"></i><span>最近发布</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2026/01/05/%E8%8B%B1%E8%AF%AD/%E9%9F%B3%E8%8A%82/" title="音节"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="/img/default_cover.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="音节"/></a><div class="content"><a class="title" href="/2026/01/05/%E8%8B%B1%E8%AF%AD/%E9%9F%B3%E8%8A%82/" title="音节">音节</a><time datetime="2026-03-03T13:41:25.652Z" title="更新于 2026-03-03 21:41:25">2026-03-03</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2026/01/05/%E8%8B%B1%E8%AF%AD/%E8%BE%85%E9%9F%B3%E5%88%86%E7%B1%BB/" title="辅音分类"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="/img/default_cover.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="辅音分类"/></a><div class="content"><a class="title" href="/2026/01/05/%E8%8B%B1%E8%AF%AD/%E8%BE%85%E9%9F%B3%E5%88%86%E7%B1%BB/" title="辅音分类">辅音分类</a><time datetime="2026-03-03T13:41:25.651Z" title="更新于 2026-03-03 21:41:25">2026-03-03</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2026/01/05/%E8%8B%B1%E8%AF%AD/%E8%AF%8D%E6%A0%B9%E8%AF%8D%E7%BC%80/" title="词根词缀"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="/img/default_cover.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="词根词缀"/></a><div class="content"><a class="title" href="/2026/01/05/%E8%8B%B1%E8%AF%AD/%E8%AF%8D%E6%A0%B9%E8%AF%8D%E7%BC%80/" title="词根词缀">词根词缀</a><time datetime="2026-03-03T13:41:25.650Z" title="更新于 2026-03-03 21:41:25">2026-03-03</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2026/01/05/%E8%8B%B1%E8%AF%AD/%E5%AD%97%E6%AF%8D%E5%8F%91%E9%9F%B3%E8%A7%84%E5%88%99/" title="字母发音规则"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="/img/default_cover.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="字母发音规则"/></a><div class="content"><a class="title" href="/2026/01/05/%E8%8B%B1%E8%AF%AD/%E5%AD%97%E6%AF%8D%E5%8F%91%E9%9F%B3%E8%A7%84%E5%88%99/" title="字母发音规则">字母发音规则</a><time datetime="2026-03-03T13:41:25.649Z" title="更新于 2026-03-03 21:41:25">2026-03-03</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2026/01/05/%E8%8B%B1%E8%AF%AD/%E6%B8%85%E8%BE%85%E9%9F%B3%E6%B5%8A%E5%8C%96%E7%8E%B0%E8%B1%A1/" title="清辅音浊化现象"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="/img/default_cover.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="清辅音浊化现象"/></a><div class="content"><a class="title" href="/2026/01/05/%E8%8B%B1%E8%AF%AD/%E6%B8%85%E8%BE%85%E9%9F%B3%E6%B5%8A%E5%8C%96%E7%8E%B0%E8%B1%A1/" title="清辅音浊化现象">清辅音浊化现象</a><time datetime="2026-03-03T13:41:25.648Z" title="更新于 2026-03-03 21:41:25">2026-03-03</time></div></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"></div></footer></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="sidebar-site-data site-data is-center"><a href="/archives/" title="archive"><div class="headline">文章</div><div class="length-num">112</div></a><a href="/tags/" title="tag"><div class="headline">标签</div><div class="length-num">0</div></a><a href="/categories/" title="category"><div class="headline">分类</div><div class="length-num">29</div></a></div><span class="sidebar-menu-item-title">功能</span><div class="sidebar-menu-item"><a class="darkmode_switchbutton menu-child" href="javascript:void(0);" rel="external nofollow noreferrer" title="显示模式"><i class="anzhiyufont anzhiyu-icon-circle-half-stroke"></i><span>显示模式</span></a></div><div class="back-menu-list-groups"><div class="back-menu-list-group"><div class="back-menu-list-title">项目</div><div class="back-menu-list"><a class="back-menu-item" target="_blank" rel="noopener external nofollow noreferrer" href="https://tokenblog.cn/" title="博客"><img class="back-menu-item-icon" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="/images/core.jpg" alt="博客"/><span class="back-menu-item-text">博客</span></a></div></div></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="javascript:void(0);" rel="external nofollow noreferrer"><span> 文章</span></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="/archives/"><i class="anzhiyufont anzhiyu-icon-box-archive faa-tada" style="font-size: 0.9em;"></i><span> 总览</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/categories/"><i class="anzhiyufont anzhiyu-icon-shapes faa-tada" style="font-size: 0.9em;"></i><span> 分类</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/tags/"><i class="anzhiyufont anzhiyu-icon-tags faa-tada" style="font-size: 0.9em;"></i><span> 标签</span></a></li></ul></div><div class="menus_item"><a class="site-page faa-parent animated-hover" href="/link/"><span> 友链</span></a></div><div class="menus_item"><a class="site-page faa-parent animated-hover" href="/music/"><span> 音乐馆</span></a></div><div class="menus_item"><a class="site-page faa-parent animated-hover" href="/album/"><span> 图库</span></a></div><div class="menus_item"><a class="site-page" href="javascript:void(0);" rel="external nofollow noreferrer"><span> 关于</span></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="/essay/"><i class="anzhiyufont anzhiyu-icon-lightbulb faa-tada" style="font-size: 0.9em;"></i><span> 闲言碎语</span></a></li><li><a class="site-page child faa-parent animated-hover" href="javascript:toRandomPost()" rel="external nofollow noreferrer"><i class="anzhiyufont anzhiyu-icon-shoe-prints1 faa-tada" style="font-size: 0.9em;"></i><span> 随便逛逛</span></a></li></ul></div></div><span class="sidebar-menu-item-title">标签</span></div></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="anzhiyufont anzhiyu-icon-book-open"></i></button><button id="translateLink" type="button" title="简繁转换">繁</button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="anzhiyufont anzhiyu-icon-circle-half-stroke"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="anzhiyufont anzhiyu-icon-arrows-left-right"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="anzhiyufont anzhiyu-icon-gear"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="anzhiyufont anzhiyu-icon-comments"></i></a><a id="switch-commentBarrage" href="javascript:anzhiyu.switchCommentBarrage();" rel="external nofollow noreferrer" title="开关弹幕"><i class="anzhiyufont anzhiyu-icon-danmu"></i></a><button id="go-up" type="button" title="回到顶部"><i class="anzhiyufont anzhiyu-icon-arrow-up"></i></button></div></div><div id="nav-music"><a id="nav-music-hoverTips" onclick="anzhiyu.musicToggle()" accesskey="m">播放音乐</a><div id="console-music-bg"></div><meting-js id="8152976493" server="netease" type="playlist" mutex="true" preload="none" theme="var(--anzhiyu-main)" data-lrctype="0" order="random" volume="0.7"></meting-js></div><div id="rightMenu"><div class="rightMenu-group rightMenu-small"><div class="rightMenu-item" id="menu-backward"><i class="anzhiyufont anzhiyu-icon-arrow-left"></i></div><div class="rightMenu-item" id="menu-forward"><i class="anzhiyufont anzhiyu-icon-arrow-right"></i></div><div class="rightMenu-item" id="menu-refresh"><i class="anzhiyufont anzhiyu-icon-arrow-rotate-right" style="font-size: 1rem;"></i></div><div class="rightMenu-item" id="menu-top"><i class="anzhiyufont anzhiyu-icon-arrow-up"></i></div></div><div class="rightMenu-group rightMenu-line rightMenuPlugin"><div class="rightMenu-item" id="menu-copytext"><i class="anzhiyufont anzhiyu-icon-copy"></i><span>复制选中文本</span></div><div class="rightMenu-item" id="menu-pastetext"><i class="anzhiyufont anzhiyu-icon-paste"></i><span>粘贴文本</span></div><a class="rightMenu-item" id="menu-commenttext"><i class="anzhiyufont anzhiyu-icon-comment-medical"></i><span>引用到评论</span></a><div class="rightMenu-item" id="menu-newwindow"><i class="anzhiyufont anzhiyu-icon-window-restore"></i><span>新窗口打开</span></div><div class="rightMenu-item" id="menu-copylink"><i class="anzhiyufont anzhiyu-icon-link"></i><span>复制链接地址</span></div><div class="rightMenu-item" id="menu-copyimg"><i class="anzhiyufont anzhiyu-icon-images"></i><span>复制此图片</span></div><div class="rightMenu-item" id="menu-downloadimg"><i class="anzhiyufont anzhiyu-icon-download"></i><span>下载此图片</span></div><div class="rightMenu-item" id="menu-newwindowimg"><i class="anzhiyufont anzhiyu-icon-window-restore"></i><span>新窗口打开图片</span></div><div class="rightMenu-item" id="menu-search"><i class="anzhiyufont anzhiyu-icon-magnifying-glass"></i><span>站内搜索</span></div><div class="rightMenu-item" id="menu-searchBaidu"><i class="anzhiyufont anzhiyu-icon-magnifying-glass"></i><span>百度搜索</span></div><div class="rightMenu-item" id="menu-music-toggle"><i class="anzhiyufont anzhiyu-icon-play"></i><span>播放音乐</span></div><div class="rightMenu-item" id="menu-music-back"><i class="anzhiyufont anzhiyu-icon-backward"></i><span>切换到上一首</span></div><div class="rightMenu-item" id="menu-music-forward"><i class="anzhiyufont anzhiyu-icon-forward"></i><span>切换到下一首</span></div><div class="rightMenu-item" id="menu-music-playlist" onclick="window.open(&quot;https://y.qq.com/n/ryqq/playlist/8802438608&quot;, &quot;_blank&quot;);" style="display: none;"><i class="anzhiyufont anzhiyu-icon-radio"></i><span>查看所有歌曲</span></div><div class="rightMenu-item" id="menu-music-copyMusicName"><i class="anzhiyufont anzhiyu-icon-copy"></i><span>复制歌名</span></div></div><div class="rightMenu-group rightMenu-line rightMenuOther"><a class="rightMenu-item menu-link" id="menu-randomPost"><i class="anzhiyufont anzhiyu-icon-shuffle"></i><span>随便逛逛</span></a><a class="rightMenu-item menu-link" href="/categories/"><i class="anzhiyufont anzhiyu-icon-cube"></i><span>博客分类</span></a><a class="rightMenu-item menu-link" href="/tags/"><i class="anzhiyufont anzhiyu-icon-tags"></i><span>文章标签</span></a></div><div class="rightMenu-group rightMenu-line rightMenuOther"><a class="rightMenu-item" id="menu-copy" href="javascript:void(0);" rel="external nofollow noreferrer"><i class="anzhiyufont anzhiyu-icon-copy"></i><span>复制地址</span></a><a class="rightMenu-item" id="menu-commentBarrage" href="javascript:void(0);" rel="external nofollow noreferrer"><i class="anzhiyufont anzhiyu-icon-message"></i><span class="menu-commentBarrage-text">关闭热评</span></a><a class="rightMenu-item" id="menu-darkmode" href="javascript:void(0);" rel="external nofollow noreferrer"><i class="anzhiyufont anzhiyu-icon-circle-half-stroke"></i><span class="menu-darkmode-text">深色模式</span></a><a class="rightMenu-item" id="menu-translate" href="javascript:void(0);" rel="external nofollow noreferrer"><i class="anzhiyufont anzhiyu-icon-language"></i><span>轉為繁體</span></a></div></div><div id="rightmenu-mask"></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="/js/tw_cn.js"></script><script src="https://cdn.cbd.int/@fancyapps/ui@5.0.28/dist/fancybox/fancybox.umd.js"></script><script src="https://cdn.cbd.int/instant.page@5.2.0/instantpage.js" type="module"></script><script src="https://cdn.cbd.int/vanilla-lazyload@17.8.5/dist/lazyload.iife.min.js"></script><script src="https://cdn.cbd.int/node-snackbar@0.1.16/dist/snackbar.min.js"></script><canvas id="universe"></canvas><script async src="https://npm.elemecdn.com/anzhiyu-theme-static@1.0.0/dark/dark.js"></script><script> // 消除控制台打印
+ var HoldLog = console.log;
+ console.log = function () {};
+ let now1 = new Date();
+ queueMicrotask(() => {
+   const Log = function () {
+     HoldLog.apply(console, arguments);
+   }; //在恢复前输出日志
+   const grt = new Date("01/01/2025 00:00:00"); //此处修改你的建站时间或者网站上线时间
+   now1.setTime(now1.getTime() + 250);
+   const days = (now1 - grt) / 1000 / 60 / 60 / 24;
+   const dnum = Math.floor(days);
+   const ascll = [
+     `让生活简单点`,
+     `
+ █████╗ ██████╗ ███████╗██████╗ ██████╗ 
+██╔══██╗╚════██╗╚════██║██╔══██╗██╔══██╗
+╚██████║ █████╔╝    ██╔╝██████╔╝██████╔╝
+ ╚═══██║ ╚═══██╗   ██╔╝ ██╔══██╗██╔══██╗
+ █████╔╝██████╔╝   ██║  ██████╔╝██████╔╝
+ ╚════╝ ╚═════╝    ╚═╝  ╚═════╝ ╚═════╝ 
+     `,
+     "已上线",
+     dnum,
+     "天",
+     //- "©2020 By 安知鱼 V1.6.14",
+   ];
+   const ascll2 = [`NCC2-036`, `调用前置摄像头拍照成功，识别为【小笨蛋】.`, `Photo captured: `, `🤪`];
+
+   setTimeout(
+     Log.bind(
+       console,
+       `\n%c${ascll[0]} %c ${ascll[1]} %c ${ascll[2]} %c${ascll[3]}%c ${ascll[4]}%c ${ascll[5]}\n\n%c ${ascll[6]}\n`,
+       "color:#425AEF",
+       "",
+       "color:#425AEF",
+       "color:#425AEF",
+       "",
+       "color:#425AEF",
+       ""
+     )
+   );
+   setTimeout(
+     Log.bind(
+       console,
+       `%c ${ascll2[0]} %c ${ascll2[1]} %c \n${ascll2[2]} %c\n${ascll2[3]}\n`,
+       "color:white; background-color:#4fd953",
+       "",
+       "",
+       'background:url("https://npm.elemecdn.com/anzhiyu-blog@1.1.6/img/post/common/tinggge.gif") no-repeat;font-size:450%'
+     )
+   );
+
+   setTimeout(Log.bind(console, "%c WELCOME %c 你好，小笨蛋.", "color:white; background-color:#4f90d9", ""));
+
+   setTimeout(
+     console.warn.bind(
+       console,
+       //- "%c ⚡ Powered by 安知鱼 %c 你正在访问 生活像一把无情刻刀！ 的博客.",
+       "color:white; background-color:#f0ad4e",
+       ""
+     )
+   );
+
+   setTimeout(Log.bind(console, "%c W23-12 %c 你已打开控制台.", "color:white; background-color:#4f90d9", ""));
+
+   setTimeout(
+     console.warn.bind(console, "%c S013-782 %c 你现在正处于监控中.", "color:white; background-color:#d9534f", "")
+   );
+ });</script><script async src="/anzhiyu/random.js"></script><div class="js-pjax"><script>(() => {
+  const $mermaid = document.querySelectorAll('#article-container .mermaid-wrap')
+  if ($mermaid.length === 0) return
+  const runMermaid = () => {
+    window.loadMermaid = true
+    const theme = document.documentElement.getAttribute('data-theme') === 'dark' ? 'dark' : 'default'
+
+    Array.from($mermaid).forEach((item, index) => {
+      const mermaidSrc = item.firstElementChild
+      const mermaidThemeConfig = '%%{init:{ \'theme\':\'' + theme + '\'}}%%\n'
+      const mermaidID = 'mermaid-' + index
+      const mermaidDefinition = mermaidThemeConfig + mermaidSrc.textContent
+
+      const renderFn = mermaid.render(mermaidID, mermaidDefinition)
+
+      const renderV10 = () => {
+        renderFn.then(({svg}) => {
+          mermaidSrc.insertAdjacentHTML('afterend', svg)
+        })
+      }
+
+      const renderV9 = svg => {
+        mermaidSrc.insertAdjacentHTML('afterend', svg)
+      }
+
+      typeof renderFn === 'string' ? renderV9(renderFn) : renderV10()
+    })
+  }
+
+  const loadMermaid = () => {
+    window.loadMermaid ? runMermaid() : getScript('https://cdn.cbd.int/mermaid@10.2.4/dist/mermaid.min.js').then(runMermaid)
+  }
+
+  anzhiyu.addGlobalFn('themeChange', runMermaid, 'mermaid')
+
+  window.pjax ? loadMermaid() : document.addEventListener('DOMContentLoaded', loadMermaid)
+})()</script><script>(() => {
+  const init = () => {
+    twikoo.init(Object.assign({
+      el: '#twikoo-wrap',
+      envId: 'https://twikoo.937b.cn/',
+      region: '',
+      onCommentLoaded: () => {
+        anzhiyu.loadLightbox(document.querySelectorAll('#twikoo .tk-content img:not(.tk-owo-emotion)'))
+      }
+    }, null))
+  }
+
+  const loadTwikoo = () => {
+    if (typeof twikoo === 'object') setTimeout(runFn,0)
+    else getScript('https://cdn.cbd.int/twikoo@1.6.39/dist/twikoo.all.min.js').then(runFn)
+  }
+
+  const getCount = () => {
+    const countELement = document.getElementById('twikoo-count')
+    if(!countELement) return
+    twikoo.getCommentsCount({
+      envId: 'https://twikoo.937b.cn/',
+      region: '',
+      urls: [window.location.pathname],
+      includeReply: false
+    }).then(res => {
+      countELement.textContent = res[0].count
+    }).catch(err => {
+      console.error(err)
+    })
+  }
+
+  const runFn = () => {
+    init();
+    GLOBAL_CONFIG_SITE.isPost && getCount()
+  }
+
+  if ('Twikoo' === 'Twikoo' || !true) {
+    if (true) anzhiyu.loadComment(document.getElementById('twikoo-wrap'), loadTwikoo)
+    else {
+      loadTwikoo()
+    }
+  } else {
+    window.loadOtherComment = loadTwikoo
+  }
+})()</script><input type="hidden" name="page-type" id="page-type" value="post"><script async src="/js/anzhiyu/comment_barrage.js"></script></div><script>window.addEventListener('load', () => {
+  const changeContent = (content) => {
+    if (content === '') return content
+
+    content = content.replace(/<img.*?src="(.*?)"?[^\>]+>/ig, '[图片]') // replace image link
+    content = content.replace(/<a[^>]+?href=["']?([^"']+)["']?[^>]*>([^<]+)<\/a>/gi, '[链接]') // replace url
+    content = content.replace(/<pre><code>.*?<\/pre>/gi, '[代码]') // replace code
+    content = content.replace(/<[^>]+>/g,"") // remove html tag
+
+    if (content.length > 150) {
+      content = content.substring(0,150) + '...'
+    }
+    return content
+  }
+
+  const getComment = () => {
+    const runTwikoo = () => {
+      twikoo.getRecentComments({
+        envId: 'https://twikoo.937b.cn/',
+        region: '',
+        pageSize: 6,
+        includeReply: true
+      }).then(function (res) {
+        const twikooArray = res.map(e => {
+          return {
+            'content': changeContent(e.comment),
+            'avatar': e.avatar,
+            'nick': e.nick,
+            'url': e.url + '#' + e.id,
+            'date': new Date(e.created).toISOString()
+          }
+        })
+
+        saveToLocal.set('twikoo-newest-comments', JSON.stringify(twikooArray), 10/(60*24))
+        generateHtml(twikooArray)
+      }).catch(function (err) {
+        const $dom = document.querySelector('#card-newest-comments .aside-list')
+        const $dom2 = document.querySelector('#card-console-newest-comments .aside-list')
+        //- $dom.textContent= "暂无评论"
+        //- $dom2.textContent= "暂无评论"
+      })
+    }
+
+    if (typeof twikoo === 'object') {
+      runTwikoo()
+    } else {
+      getScript('https://cdn.cbd.int/twikoo@1.6.39/dist/twikoo.all.min.js').then(runTwikoo)
+    }
+  }
+
+  const generateHtml2 = array => {
+    let result = ''
+
+    if (array.length) {
+      for (let i = 0; i < array.length; i++) {
+        result += '<div class=\'aside-list-item\'>'
+
+        if (true) {
+          const name = 'data-lazy-src'
+          result += `<a href='${array[i].url}' class='thumbnail'><img ${name}='${array[i].avatar}' alt='${array[i].nick}'><div class='name'><span>${array[i].nick} </span></div></a>`
+        }
+
+        result += `<div class='content'>
+        <a class='comment' href='${array[i].url}' title='${array[i].content}'>${array[i].content}</a>
+        <time datetime="${array[i].date}">${anzhiyu.diffDate(array[i].date, true)}</time></div>
+        </div>`
+      }
+    } else {
+      result += '没有评论'
+    }
+
+    let $dom2 = document.querySelector('#card-console-newest-comments .aside-list')
+    $dom2 && ($dom2.innerHTML= result)
+    window.lazyLoadInstance && window.lazyLoadInstance.update()
+    window.pjax && window.pjax.refresh($dom2)
+  }
+
+    const generateHtml = array => {
+    let result = ''
+
+    if (array.length) {
+      for (let i = 0; i < array.length; i++) {
+        result += '<div class=\'aside-list-item\'>'
+
+        if (true) {
+          const name = 'data-lazy-src'
+          result += `<a  href='${array[i].url}' class='thumbnail'><img ${name}='${array[i].avatar}' alt='${array[i].nick}'></a>`
+        }
+
+        result += `          
+        <a  class="rightc"  href='${array[i].url}' title='${array[i].content}'>
+        <div class='comment'>
+          <div class='title'>${array[i].content}</div>
+          <div class='userName'>${array[i].nick} - ${anzhiyu.diffDate(array[i].date, true)}</time></div>
+          </div>
+
+        </a>
+        </div>`
+      }
+
+        //- <time datetime="${array[i].date}">${anzhiyu.diffDate(array[i].date, true)}</time>
+    } else {
+      result += '没有评论'
+    }
+
+    let $dom = document.querySelector('#card-newest-comments .aside-list')
+    $dom && ($dom.innerHTML= result)
+    window.lazyLoadInstance && window.lazyLoadInstance.update()
+    window.pjax && window.pjax.refresh($dom)
+  }
+
+  const newestCommentInit = () => {
+    if (document.querySelector('#card-newest-comments .aside-list')) {
+      const data = saveToLocal.get('twikoo-newest-comments')
+      if (data) {
+        generateHtml(JSON.parse(data))
+      } else {
+        getComment()
+      }
+    }
+    if (document.querySelector('#card-console-newest-comments .aside-list')) {
+      const data = saveToLocal.get('twikoo-newest-comments')
+      if (data) {
+        generateHtml2(JSON.parse(data))
+      } else {
+        getComment()
+      }
+    }
+  }
+
+  newestCommentInit()
+  document.addEventListener('pjax:complete', newestCommentInit)
+})</script><script async data-pjax src="https://npm.elemecdn.com/anzhiyu-theme-static@1.0.1/bubble/bubble.js"></script><script>var visitorMail = "";
+</script><script async data-pjax src="https://cdn.cbd.int/anzhiyu-theme-static@1.0.0/waterfall/waterfall.js"></script><script src="https://lf3-cdn-tos.bytecdntp.com/cdn/expire-1-M/qrcodejs/1.0.0/qrcode.min.js"></script><script src="/js/anzhiyu/right_click_menu.js"></script><link rel="stylesheet" href="https://cdn.cbd.int/anzhiyu-theme-static@1.1.9/icon/ali_iconfont_css.css"><link rel="stylesheet" href="https://cdn.cbd.int/anzhiyu-theme-static@1.0.0/aplayer/APlayer.min.css" media="print" onload="this.media='all'"><script src="https://cdn.cbd.int/anzhiyu-blog-static@1.0.1/js/APlayer.min.js"></script><script src="https://cdn.cbd.int/hexo-anzhiyu-music@1.0.1/assets/js/Meting2.min.js"></script><script src="https://cdn.cbd.int/pjax@0.2.8/pjax.min.js"></script><script>let pjaxSelectors = ["meta[property=\"og:image\"]","meta[property=\"og:title\"]","meta[property=\"og:url\"]","meta[property=\"og:type\"]","meta[property=\"og:site_name\"]","meta[property=\"og:description\"]","head > title","#config-diff","#body-wrap","#rightside-config-hide","#rightside-config-show",".js-pjax"]
+var pjax = new Pjax({
+  elements: 'a:not([target="_blank"])',
+  selectors: pjaxSelectors,
+  cacheBust: false,
+  analytics: false,
+  scrollRestoration: false
+})
+
+document.addEventListener('pjax:send', function () {
+  // removeEventListener scroll 
+  anzhiyu.removeGlobalFnEvent('pjax')
+  anzhiyu.removeGlobalFnEvent('themeChange')
+
+  document.getElementById('rightside').classList.remove('rightside-show')
+  
+  if (window.aplayers) {
+    for (let i = 0; i < window.aplayers.length; i++) {
+      if (!window.aplayers[i].options.fixed) {
+        window.aplayers[i].destroy()
+      }
+    }
+  }
+
+  typeof typed === 'object' && typed.destroy()
+
+  //reset readmode
+  const $bodyClassList = document.body.classList
+  $bodyClassList.contains('read-mode') && $bodyClassList.remove('read-mode')
+})
+
+document.addEventListener('pjax:complete', function () {
+  window.refreshFn()
+
+  document.querySelectorAll('script[data-pjax]').forEach(item => {
+    const newScript = document.createElement('script')
+    const content = item.text || item.textContent || item.innerHTML || ""
+    Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
+    newScript.appendChild(document.createTextNode(content))
+    item.parentNode.replaceChild(newScript, item)
+  })
+
+  GLOBAL_CONFIG.islazyload && window.lazyLoadInstance.update()
+
+  typeof panguInit === 'function' && panguInit()
+
+  // google analytics
+  typeof gtag === 'function' && gtag('config', '', {'page_path': window.location.pathname});
+
+  // baidu analytics
+  typeof _hmt === 'object' && _hmt.push(['_trackPageview',window.location.pathname]);
+
+  typeof loadMeting === 'function' && document.getElementsByClassName('aplayer').length && loadMeting()
+
+  // prismjs
+  typeof Prism === 'object' && Prism.highlightAll()
+})
+
+document.addEventListener('pjax:error', e => {
+  if (e.request.status === 404) {
+    pjax.loadUrl('/404.html')
+  }
+})</script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><script charset="UTF-8" src="https://cdn.cbd.int/anzhiyu-theme-static@1.1.5/accesskey/accesskey.js"></script></div><div id="popup-window"><div class="popup-window-title">通知</div><div class="popup-window-divider"></div><div class="popup-window-content"><div class="popup-tip">你好呀</div><div class="popup-link"><i class="anzhiyufont anzhiyu-icon-arrow-circle-right"></i></div></div></div></body></html>
